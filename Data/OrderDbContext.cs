@@ -14,7 +14,17 @@ public class OrderDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
+        modelBuilder.Entity<Order>()
+        .HasMany(e => e.Deliveries)
+        .WithOne(e => e.Order)
+        .HasForeignKey(e => e.OrderId)
+        .OnDelete(DeleteBehavior.Cascade)
+        .IsRequired();
+        modelBuilder.Entity<Shipper>()
+        .HasMany(e => e.Deliveries)
+        .WithOne(e => e.Shipper)
+        .HasForeignKey(e => e.ShipperId)
+        .IsRequired();
         modelBuilder.Entity<Shipper>().HasData(new Shipper()
         {
             ShipperId = 1,
@@ -36,11 +46,7 @@ public class OrderDbContext : DbContext
             TotalPrice = 12,
             Deliveries = new List<Delivery>()
         });
-        modelBuilder.Entity<Order>()
-        .HasMany(e => e.Deliveries)
-        .WithOne(e => e.Order)
-        .HasForeignKey(e => e.OrderId)
-        .IsRequired();
+        
 
     }
 }

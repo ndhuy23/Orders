@@ -40,9 +40,9 @@ namespace Orders.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public IActionResult Post([FromBody] OrderDto orderDto)
+        public IActionResult Post([FromBody] CreateOrderDto createOrderDto)
         {
-            var result = _orderService.Post(orderDto);
+            var result = _orderService.Post(createOrderDto);
             if (!result.IsSuccess)
             {
                 return BadRequest(result);

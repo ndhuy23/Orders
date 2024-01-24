@@ -136,3 +136,4 @@ C:\Users\a do min\source\repos\Orders\Orders\obj\Debug\net8.0\Orders.genruntimec
 C:\Users\a do min\source\repos\Orders\Orders\obj\Debug\net8.0\ref\Orders.dll
 C:\Users\a do min\source\repos\Orders\Orders\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\a do min\source\repos\Orders\Orders\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\a do min\source\repos\Orders\Orders\obj\Debug\net8.0\Orders.sourcelink.json

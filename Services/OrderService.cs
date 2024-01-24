@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Orders.ViewModel;
 using Orders.ViewModel.Dto;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Orders.Services
 {
@@ -8,7 +9,7 @@ namespace Orders.Services
     {
         public ResultModel Get();
         public ResultModel Get(int id);
-        public ResultModel Post(OrderDto orderDto);
+        public ResultModel Post(CreateOrderDto orderDto);
     }
     
     public class OrderService : IOrderService
@@ -16,12 +17,14 @@ namespace Orders.Services
         private readonly OrderDbContext _context;
         private ResultModel _result;
         private IMapper _mapper;
+        public readonly IDeliveryService _deliveryService;
 
-        public OrderService(OrderDbContext context, IMapper mapper)
+        public OrderService(OrderDbContext context, IMapper mapper, IDeliveryService deliveryService)
         {
             _context = context;
             _result = new ResultModel();
             _mapper = mapper;
+            _deliveryService = deliveryService;
         }
 
         public ResultModel Get()
@@ -58,21 +61,20 @@ namespace Orders.Services
             return _result;
         }
 
-        public ResultModel Post(OrderDto orderDto)
+        public ResultModel Post(CreateOrderDto createOrderDto)
         {
             try
             {
-                Order data = _mapper.Map<Order>(orderDto);
-                _context.Add(data);
+                Order order = new Order(createOrderDto.OrderCode, createOrderDto.TotalPrice);
+                Shipper shipper = _context.Shippers.First(s => s.Code == createOrderDto.ShipperCode);
+                _context.Add(order);
                 _context.SaveChanges();
-                _result.Data = orderDto;
-                _result.IsSuccess = true;
-                _result.Message = "Post Successfully";
+                _result = _deliveryService.Post(order, shipper);
             }
             catch( Exception ex)
             {
                 _result.IsSuccess = false;
-                _result.Message = "Post Failed";
+                _result.Message = "Please check Shipper Id";
             }
 
             return _result;

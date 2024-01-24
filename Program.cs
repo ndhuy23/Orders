@@ -16,7 +16,7 @@ builder.Services.AddDbContext<OrderDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddTransient<IDeliveryService, DeliveryService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 IMapper mapper = MappingConfig.RegisterMap().CreateMapper();
 builder.Services.AddSingleton(mapper);
