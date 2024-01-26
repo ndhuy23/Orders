@@ -38,15 +38,6 @@ public class OrderDbContext : DbContext
             Code = "EMP002",
             Name = "William"
         });
-        modelBuilder.Entity<Order>().HasData(new Order()
-        {
-            OrderId = 1,
-            OrderCode = "KM2332",
-            Status = "Pending",
-            TotalPrice = 12,
-            Deliveries = new List<Delivery>()
-        });
-        
 
     }
 }

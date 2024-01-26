@@ -9,5 +9,6 @@ namespace Orders.ViewModel.Dto
         }
         public string OrderCode { get; set; }
         public int TotalPrice { get; set; }
+        public string Status { get; set; }
     }
 }

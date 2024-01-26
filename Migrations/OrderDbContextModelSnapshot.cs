@@ -42,6 +42,10 @@ namespace Orders.Migrations
                     b.Property<int>("ShipperId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("DeliveryId");
 
                     b.HasIndex("OrderId");
@@ -73,15 +77,6 @@ namespace Orders.Migrations
                     b.HasKey("OrderId");
 
                     b.ToTable("Orders");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderId = 1,
-                            OrderCode = "KM2332",
-                            Status = "Pending",
-                            TotalPrice = 12
-                        });
                 });
 
             modelBuilder.Entity("Shipper", b =>

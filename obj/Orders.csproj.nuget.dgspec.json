@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\a do min\\source\\repos\\Orders\\Orders\\Orders.csproj": {}
+    "C:\\Users\\Admins\\source\\repos\\Orders\\Orders\\Orders.csproj": {}
   },
   "projects": {
-    "C:\\Users\\a do min\\source\\repos\\Orders\\Orders\\Orders.csproj": {
+    "C:\\Users\\Admins\\source\\repos\\Orders\\Orders\\Orders.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\a do min\\source\\repos\\Orders\\Orders\\Orders.csproj",
+        "projectUniqueName": "C:\\Users\\Admins\\source\\repos\\Orders\\Orders\\Orders.csproj",
         "projectName": "Orders",
-        "projectPath": "C:\\Users\\a do min\\source\\repos\\Orders\\Orders\\Orders.csproj",
-        "packagesPath": "C:\\Users\\a do min\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\a do min\\source\\repos\\Orders\\Orders\\obj\\",
+        "projectPath": "C:\\Users\\Admins\\source\\repos\\Orders\\Orders\\Orders.csproj",
+        "packagesPath": "C:\\Users\\Admins\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admins\\source\\repos\\Orders\\Orders\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\a do min\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,6 +52,10 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -61,6 +69,26 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1001, )"
+            },
+            "Microsoft.Office.Interop.Outlook": {
+              "target": "Package",
+              "version": "[15.0.4797.1004, )"
+            },
+            "Microsoft.Office.Interop.Word": {
+              "target": "Package",
+              "version": "[15.0.4797.1004, )"
+            },
+            "Microsoft.VisualStudio.SDK.EmbedInteropTypes": {
+              "target": "Package",
+              "version": "[15.0.36, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

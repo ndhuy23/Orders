@@ -2,13 +2,13 @@
 {
     public class DeliveryDto
     {
-        public int OrderId { get; set; }
-        public int ShipperId { get; set; }
+        public string DeliveryCode { get; set; }
 
-        public DeliveryDto(int orderId, int shipperId)
+        public string Status { get; set; }
+        public DeliveryDto()
         {
-            OrderId = orderId;
-            ShipperId = shipperId;
+            
         }
+
     }
 }

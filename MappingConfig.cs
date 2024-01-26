@@ -9,7 +9,7 @@ namespace Orders
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-                config.CreateMap<OrderDto, Order>();
+                config.CreateMap<OrderDto, Order>().ForMember(dest => dest.OrderId, opt => opt.Ignore());
                 config.CreateMap<Order, OrderDto>();
         
             });

@@ -49,5 +49,15 @@ namespace Orders.Controllers
             }
             return Ok(result);
         }
+        [HttpPut]
+        public IActionResult Put(OrderDto order)
+        {
+            ResultModel result = _orderService.Put(order);
+            if (!result.IsSuccess)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
     }
 }

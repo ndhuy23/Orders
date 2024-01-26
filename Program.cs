@@ -18,6 +18,7 @@ builder.Services.AddDbContext<OrderDbContext>(option =>
 });
 builder.Services.AddTransient<IDeliveryService, DeliveryService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<ExcelService>();
 IMapper mapper = MappingConfig.RegisterMap().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
